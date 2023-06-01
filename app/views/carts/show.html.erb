@@ -1,8 +1,17 @@
 <section class="cart-show">
 
+  <% if enhanced_cart.empty? %>
+    <header class="page-header">
+      <h1>Your cart is empty</h1>
+      <p>Please add items to your cart before proceeding.</p>
+      <%= link_to "Go to Home Page", root_path, class: "btn" %>
+    </div>
+  <% else %>
+
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+  
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -48,5 +57,5 @@
       <% end %>
     </div>
   </div>
-
+  <% end %>
 </section>
