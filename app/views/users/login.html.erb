@@ -1,23 +1,28 @@
-<h1>Login</h1>
+<section class="admin-products-index">
 
-<%= form_with url: authenticate_path, method: :post do |form| %>
-  <% if flash[:alert] %>
-    <div class="alert alert-danger">
-      <%= flash[:alert] %>
+  <header class="page-header">
+    <h1>Login</h1>
+  </header>
+
+    <%= form_with url: authenticate_path, method: :post do |form| %>
+    <% if flash[:alert] %>
+        <div class="alert alert-danger">
+        <%= flash[:alert] %>
+        </div>
+    <% end %>
+
+    <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
+    <div class="field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Login' %>
-  </div>
-<% end %>
+    <div class="actions">
+        <%= form.submit 'Login' %>
+    </div>
+    <% end %>
+</section>
