@@ -97,7 +97,26 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
-  end
+  
+      it 'authenticates user with spaces in email' do
+        authenticated_user = User.authenticate_with_credentials(' example@domain.com ', 'password')
+        expect(authenticated_user).to be_nil
+      end
+  
+      it 'does not authenticate user with wrong case in email' do
+        authenticated_user = User.authenticate_with_credentials('EXAMPLe@DOMAIN.CoM', 'password')
+        expect(authenticated_user).to be_nil
+      end
+  
+      it 'does not authenticate user with incorrect email' do
+        authenticated_user = User.authenticate_with_credentials('wrong_email@domain.com', 'password')
+        expect(authenticated_user).to be_nil
+      end
+  
+      it 'does not authenticate user with incorrect password' do
+        authenticated_user = User.authenticate_with_credentials('example@domain.com', 'wrong_password')
+        expect(authenticated_user).to be_nil
+      end
+    end
 
 end

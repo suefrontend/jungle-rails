@@ -1,9 +1,11 @@
-class SessionController < ApplicationController
-    def create
-        if user = User.authenticate_with_credentials(params[:email], params[:password])
-          # success logic, log them in
-        else
-          # failure, render login form
-        end
-      end
+class SessionsController < ApplicationController
+  def create
+    @user = User.authenticate_with_credentials(params[:email], params[:password])
+    if @user
+      session[:user_id] = @user.id
+      redirect_to '/'
+    else
+      redirect_to '/login'
+    end
+  end
 end
