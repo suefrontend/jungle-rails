@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.order(created_at: :desc)
+    # abort @products.inspect
   end
 
   def show
