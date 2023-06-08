@@ -1,6 +1,10 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Jungle is an e-commerce application built with Ruby on Rails.
+
+## Screenshots
+
+![Jungle-Screenshot01](https://www.github.com)
 
 ## Setup
 
