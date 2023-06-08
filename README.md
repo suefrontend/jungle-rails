@@ -4,7 +4,8 @@ Jungle is an e-commerce application built with Ruby on Rails.
 
 ## Screenshots
 
-![Jungle-Screenshot01](https://www.github.com)
+![Jungle-Screenshot01](https://github.com/suefrontend/jungle-rails/blob/master/app/assets/images/image01.png?raw=true)
+![Jungle-Screenshot01](https://github.com/suefrontend/jungle-rails/blob/master/app/assets/images/image02.png?raw=true)
 
 ## Setup
 
